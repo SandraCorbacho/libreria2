@@ -46,6 +46,7 @@ class BookController extends Controller
         $book->stock = $request->stock;
         //Desem els canvis
         $book->save();
+        return "libro guardado con éxito";
     }
 
     /**
@@ -56,7 +57,12 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        return Book::where('id', $id)->get();
+        $book =  Book::where('id', $id)->first();
+        if($book == null){
+            return "el libro no existe";
+
+        }
+        return $book;
 
     }
 
