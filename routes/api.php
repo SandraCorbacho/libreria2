@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\BookController;
+use App\Http\Controllers\Api\UserController;
 
 
 /*
@@ -29,3 +29,5 @@ Route::middleware('auth:api')->group(function() {
     });
 });
 Route::resource('/books','App\Http\Controllers\Api\BookController');
+Route::post('login', [UserController::class,'login']);
+Route::post('register',[UserController::class,'register']);
