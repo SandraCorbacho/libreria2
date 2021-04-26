@@ -93,7 +93,7 @@ class BookController extends Controller
     {
         $book = Book::where('id', $id)->get();
         if($book != null){
-            $book->destroy();
+            $book->delete();
             return "borrado con éxito";
         }
         return " el libro no existe";
