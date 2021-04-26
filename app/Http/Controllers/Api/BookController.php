@@ -80,7 +80,12 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-     
+        $book =  Book::where('id', $id)->first();
+        if($book == null){
+            return "el libro no existe";
+
+        }
+        return $book;
     }
 
     /**
