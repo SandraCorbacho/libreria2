@@ -25,7 +25,13 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return '{
+            "name":"Harry Potter",
+            "iban":"75964648L",
+            "pvp":"25.99",
+            "pvp_discount":"20.99",
+            "stock":"5"
+        }';
     }
 
     /**
