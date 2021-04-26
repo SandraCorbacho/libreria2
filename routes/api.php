@@ -31,3 +31,4 @@ Route::middleware('auth:api')->group(function() {
 Route::resource('/books','App\Http\Controllers\Api\BookController');
 Route::post('login', [UserController::class,'login']);
 Route::post('register',[UserController::class,'register']);
+Route::post('details',[UserController::class,'details']);
