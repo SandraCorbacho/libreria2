@@ -91,6 +91,8 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = Book::where('id', $id)->get();
+        $book->delete();
+
     }
 }
