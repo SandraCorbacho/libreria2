@@ -74,7 +74,33 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+        //Instanciem la classe Pokemon
+        $book = Book::where('id', $id)->first();
+        if($book != null){
+
+       
+        //Declarem el nom amb el request
+        if(isset($request->name)){
+            $book->name = $request->name;
+        }
+        if(isset($request->iban)){
+            $book->iban = $request->iban;
+        }
+        if(isset($request->pvp)){
+            $book->pvp = $request->pvp;
+        }
+        if(isset($request->pvp_discount)){
+            $book->pvp_discount = $request->pvp_discount;
+        }
+        if(isset($request->stock)){
+            $book->stock = $request->stock;
+        }
+        //Desem els canvis
+        $book->update();
+        return "libro actualizado con éxito";
+
+    }
+        return "libro no éxiste";
     }
 
     /**
