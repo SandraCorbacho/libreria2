@@ -91,7 +91,7 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        $book = Book::where('id', $id)->get();
+        $book = Book::where('id', $id)->first();
         if($book != null){
             $book->delete();
             return "borrado con éxito";
